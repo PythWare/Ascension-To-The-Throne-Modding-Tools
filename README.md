@@ -1,4 +1,4 @@
-An unpacker and repacker for Ascension To The Throne. The Repacker is designed to suppose smaller, larger, or original size file repacking. That means you don't have to worry about mods becoming larger or smaller than original files.
+An unpacker and repacker for Ascension To The Throne. The Repacker is designed to support smaller, larger, or original size file repacking. That means you don't have to worry about mods becoming larger or smaller than original files.
 
 To use the scripts, place them in the same directory that contains Resource0.pak and Resource1.pak and double click as needed.
 
