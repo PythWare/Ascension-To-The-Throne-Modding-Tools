@@ -1,7 +1,7 @@
 import os
 
-Pak0_file = "Resource00.pak"
-Pak1_file = "Resource11.pak"
+Pak0_file = "Resource0.pak"
+Pak1_file = "Resource1.pak"
 Repack_0_file = "Resource0.ref"
 Repack_1_file = "Resource1.ref"
 Pak0_folder = "Pak0_Files"
