@@ -1,4 +1,5 @@
 import os
+import shutil
 
 Pak0_file = "Resource0.pak"
 Pak1_file = "Resource1.pak"
@@ -6,15 +7,24 @@ Repack_0_file = "Resource0.ref"
 Repack_1_file = "Resource1.ref"
 Pak0_folder = "Pak0_Files"
 Pak1_folder = "Pak1_Files"
+Backup = "Backup_Pak_Files"
 
 signature_check = b'\x47\x52\x45\x53'
 
+def backup_pak(file: str):
+    """Backs up the PAK file before unpacking."""
+    backup_file = os.path.join(Backup, file)
+    if not os.path.isfile(backup_file):
+        print(f"Creating backup: {backup_file}")
+        shutil.copy(file, backup_file)
+        
 def Reader(file: str, repack_file: str, folder: str, sig_check: bytes):
     """This function handles file reading for pak files"""
     print(f"Starting unpack for {file}")
     try:
         if os.path.isfile(repack_file):
             os.remove(repack_file)
+        backup_pak(file)
         # Open pak file and a ref file for storing metadata for repacking
         with open(file, "rb") as f1, open(repack_file, "ab") as f2:
             sig_read = f1.read(4) # Check if initial 4 bytes match signature
@@ -73,7 +83,8 @@ if __name__ == "__main__":
     try:
         os.makedirs(Pak0_folder, exist_ok = True) # create PAK0 unpack folder
         os.makedirs(Pak1_folder, exist_ok = True) # create PAK1 unpack folder
-
+        os.makedirs(Backup, exist_ok = True) # create PAK files backup folder
+        
         Reader(Pak0_file, Repack_0_file, Pak0_folder, signature_check) # call Reader function for PAK0
         Reader(Pak1_file, Repack_1_file, Pak1_folder, signature_check) # call Reader function for PAK1
     except Exception as e:
