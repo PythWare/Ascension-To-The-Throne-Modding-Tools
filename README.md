@@ -5,3 +5,5 @@ To use the scripts, place them in the same directory that contains Resource0.pak
 The unpacker script will also create a folder (Backup_Pak_Files) for storing backups of the original PAK files, just incase you want to revert back to unmodified versions.
 
 Please let me know here or in the discussion section of ascension to the throne on steam if you encounter any issues.
+
+On another note, you'll probably need unluac for the Lua files, the Lua files for Ascension to the Throne have a LuaQ signature which means they're compiled Lua files.
