@@ -77,6 +77,6 @@ if __name__ == "__main__":
         Reader(Pak0_file, Repack_0_file, Pak0_folder, signature_check) # call Reader function for PAK0
         Reader(Pak1_file, Repack_1_file, Pak1_folder, signature_check) # call Reader function for PAK1
     except Exception as e:
-        print(f"Script failed: {e}")
+        input(f"Script failed: {e}")
         sys.exit(1)
     input("Task finished, you may exit now.")

@@ -111,5 +111,6 @@ if __name__ == "__main__":
         Reader(Pak1_file, Repack_1_file, Pak1_folder)  # Process PAK1
         print("Task finished successfully.")
     except Exception as e:
-        print(f"Script failed: {e}")
+        input(f"Script failed: {e}")
+        sys.exit(1)
     input("Press Enter to exit.")
