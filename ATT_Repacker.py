@@ -1,5 +1,7 @@
 import os, sys
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 Pak0_file = "Resource0.pak"
 Pak1_file = "Resource1.pak"
 Repack_0_file = "Resource0.ref"
@@ -106,7 +108,6 @@ def Update_metadata(file: str, filecount: bytes):
         raise
 
 if __name__ == "__main__":
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     try:
         Reader(Pak0_file, Repack_0_file, Pak0_folder)  # Process PAK0
         Reader(Pak1_file, Repack_1_file, Pak1_folder)  # Process PAK1
@@ -115,4 +116,5 @@ if __name__ == "__main__":
         input(f"Script failed: {e}")
         sys.exit(1)
     input("Press Enter to exit.")
+
 
