@@ -1,5 +1,4 @@
-import os
-import shutil
+import os, shutil, sys
 
 Pak0_file = "Resource0.pak"
 Pak1_file = "Resource1.pak"
@@ -80,6 +79,7 @@ def Repacker(file: str, raw_filename: bytes, offset: bytes, size: bytes):
         raise
         
 if __name__ == "__main__":
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     try:
         os.makedirs(Pak0_folder, exist_ok = True) # create PAK0 unpack folder
         os.makedirs(Pak1_folder, exist_ok = True) # create PAK1 unpack folder
@@ -91,3 +91,4 @@ if __name__ == "__main__":
         input(f"Script failed: {e}")
         sys.exit(1)
     input("Task finished, you may exit now.")
+
