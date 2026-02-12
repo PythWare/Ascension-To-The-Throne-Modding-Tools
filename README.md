@@ -1,3 +1,9 @@
+# Update
+
+This repository is now outdated and no longer supported since I designed Ingelmia Engine as the new modding tools for Ascension To The Throne. Go to my new repository for current GUI modding tools for Ascension To The Throne
+
+https://github.com/PythWare/Ingelmia-Engine
+
 # Info
 An unpacker and repacker for Ascension To The Throne. The Repacker is designed to support smaller, larger, or original size file repacking. That means you don't have to worry about mods becoming larger or smaller than original files.
 
